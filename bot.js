@@ -84,7 +84,7 @@ client.on('message', message => {
             }
             if(args[0] === `crafters`){
                 message.member.roles.add('709461046833971291')
-                    .then(member => message.author.send("You can now access raid content."))
+                    .then(member => message.author.send("You can now access crafters content."))
                     .catch(err => {
                         console.log(err);
                         message.author.send("Something went wrong when we tried to apply your role...");
