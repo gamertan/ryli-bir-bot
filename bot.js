@@ -36,7 +36,6 @@ client.on('message', message => {
                 });
             message.delete();
         }
-
     }
 
     // Commands
@@ -72,17 +71,8 @@ client.on('message', message => {
     } else if (command === `role`) {
         if(!args.length){
             return message.channel.send(`${message.member.
-                nickname}, you didn't provide a role...\nPlease use one of the following: \`worldnews\`, \`raiders\``);
+                nickname}, you didn't provide a role...\nPlease use one of the following: \`worldnews\`, \`raiders\`, \`crafters\`.`);
         } else {
-            if(args[0] === `worldnews`){
-                message.member.roles.add('707336844202868776')
-                    .then(member => message.author.send("You can now access world news content."))
-                    .catch(err => {
-                        console.log(err);
-                        message.author.send("Something went wrong when we tried to apply your role...");
-                    });
-                    message.delete();
-            }
             if(args[0] === `raiders`){
                 message.member.roles.add('676489600361037824')
                     .then(member => message.author.send("You can now access raid content."))
@@ -91,6 +81,24 @@ client.on('message', message => {
                         message.author.send("Something went wrong when we tried to apply your role...");
                     });
                     message.delete();
+            }
+            if(args[0] === `crafters`){
+                message.member.roles.add('709461046833971291')
+                    .then(member => message.author.send("You can now access raid content."))
+                    .catch(err => {
+                        console.log(err);
+                        message.author.send("Something went wrong when we tried to apply your role...");
+                    });
+                    message.delete();
+            }
+            if (args[0] === `worldnews`) {
+                message.member.roles.add('707336844202868776')
+                    .then(member => message.author.send("You can now access world news content."))
+                    .catch(err => {
+                        console.log(err);
+                        message.author.send("Something went wrong when we tried to apply your role...");
+                    });
+                message.delete();
             }
         }
     }
