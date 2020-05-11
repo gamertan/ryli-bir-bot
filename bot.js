@@ -12,16 +12,24 @@ client.on('message', message => {
             message.author.send(`Your attempt to join a role failed. Please enter only the number of the channel you'd like to join in the text input.`);
             message.delete();
         } else if (message.content === '1') {
-            message.member.roles.add('707336844202868776')
-                .then(member => message.author.send("You can now access world news content."))
+            message.member.roles.add('676489600361037824')
+                .then(member => message.author.send("You can now access raid content."))
                 .catch(err => {
                     console.log(err);
                     message.author.send("Something went wrong when we tried to apply your role...");
                 });
             message.delete();
         } else if (message.content === '2') {
-            message.member.roles.add('676489600361037824')
-                .then(member => message.author.send("You can now access raid content."))
+            message.member.roles.add('709461046833971291')
+                .then(member => message.author.send("You can now access crafting content."))
+                .catch(err => {
+                    console.log(err);
+                    message.author.send("Something went wrong when we tried to apply your role...");
+                });
+            message.delete();
+        } else if (message.content === '3') {
+            message.member.roles.add('707336844202868776')
+                .then(member => message.author.send("You can now access world news content."))
                 .catch(err => {
                     console.log(err);
                     message.author.send("Something went wrong when we tried to apply your role...");
