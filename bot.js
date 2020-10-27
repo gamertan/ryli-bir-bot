@@ -28,6 +28,14 @@ client.on('message', message => {
                 });
             message.delete();
         } else if (message.content === '3') {
+            message.member.roles.add('770200636464824330')
+                .then(member => message.author.send("You can now access Minecraft content."))
+                .catch(err => {
+                    console.log(err);
+                    message.author.send("Something went wrong when we tried to apply your role...");
+                });
+            message.delete();
+        } else if (message.content === '4') {
             message.member.roles.add('707336844202868776')
                 .then(member => message.author.send("You can now access world news content."))
                 .catch(err => {
