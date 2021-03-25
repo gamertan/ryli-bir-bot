@@ -36,14 +36,6 @@ client.on('message', message => {
                 });
             message.delete();
         } else if (message.content === '4') {
-            message.member.roles.add('707336844202868776')
-                .then(member => message.author.send("You can now access world news content."))
-                .catch(err => {
-                    console.log(err);
-                    message.author.send("Something went wrong when we tried to apply your role...");
-                });
-            message.delete();
-        } else if (message.content === 'wow') {
             message.member.roles.add('824788246886219796')
                 .then(member => message.author.send("You can now access World of Warcraft content."))
                 .catch(err => {
@@ -51,7 +43,15 @@ client.on('message', message => {
                     message.author.send("Something went wrong when we tried to apply your role...");
                 });
             message.delete();
-        }
+        } /*else if (message.content === '*') {
+            message.member.roles.add('707336844202868776')
+                .then(member => message.author.send("You can now access world news content."))
+                .catch(err => {
+                    console.log(err);
+                    message.author.send("Something went wrong when we tried to apply your role...");
+                });
+            message.delete();
+        }*/
     }
 
     // Commands
