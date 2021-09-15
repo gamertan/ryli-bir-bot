@@ -6,6 +6,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const prefix = process.env.PREFIX;
 
 client.commands = new Collection();
+
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
@@ -15,13 +16,16 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
-client.on('ready', () => {
-    console.log(`${client.user.tag} has logged in...`);
-});
+const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
-client.on('messageDelete', message => {
-    console.log(`A message was deleted: ${message}`);
-});
+for (const file of eventFiles) {
+	const event = require(`./events/${file}`);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	} else {
+		client.on(event.name, (...args) => event.execute(...args));
+	}
+}
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
@@ -88,7 +92,6 @@ client.on('messageCreate', message => {
             message.delete();
         }
     }
-
 });
 
 client.login(process.env.BOT_TOKEN);
