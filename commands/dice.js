@@ -5,7 +5,7 @@ module.exports = {
 		.setName('dice')
 		.setDescription('Test your luck with a dice roll!'),
 	async execute(interaction) {
-		await interaction.reply(`You rolled a ${dice()}`);
+		await interaction.reply(`${interaction.user.username} rolled a ${dice()}`);
 	},
 };
 
