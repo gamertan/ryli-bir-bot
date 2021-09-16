@@ -22,7 +22,7 @@ module.exports = {
                 .then(await interaction.reply({content:`You've been assigned the Raiders role!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
-                    await interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
+                    interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
                 });
                 break;
             case 'crafting':
@@ -30,7 +30,7 @@ module.exports = {
                 .then(await interaction.reply({content:`You've been assigned the Crafting role!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
-                    await interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
+                    interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
                 });
                 break;
             case 'minecraft':
@@ -38,7 +38,7 @@ module.exports = {
                 .then(await interaction.reply({content:`You've been assigned the Minecraft role!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
-                    await interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
+                    interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
                 });
                 break;
             case 'mgp-gang':
@@ -46,7 +46,7 @@ module.exports = {
                 .then(await interaction.reply({content:`You've been assigned the MGP Gang role!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
-                    await interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
+                    interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
                 });
                 break;
             case 'wow':
@@ -54,12 +54,12 @@ module.exports = {
                 .then(await interaction.reply({content:`You've been assigned the WoW role!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
-                    await interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
+                    interaction.reply({content:"Something went wrong when we tried to apply your role...", ephemeral: true});
                 });
                 break;
             default:
                 console.log("Roles not appropriately formed...")
-                await interaction.reply({content:`Something went wrong when assigning your roles...`, ephemeral: true})
+                interaction.reply({content:`Something went wrong when assigning your roles...`, ephemeral: true})
         }
 
 	},
