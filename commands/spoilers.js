@@ -19,7 +19,7 @@ module.exports = {
         const spoilers = interaction.options.getString('spoilers');
         switch (spoilers){
             case 'arr':
-                await interaction.member.spoilers.add('916204842987425852')
+                await interaction.member.roles.add('916204842987425852')
                 .then(await interaction.reply({content:`You can now access A Realm Reborn spoilers!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
@@ -27,7 +27,7 @@ module.exports = {
                 });
                 break;
             case 'hw':
-                await interaction.member.spoilers.add('916205415547699271')
+                await interaction.member.roles.add('916205415547699271')
                 .then(await interaction.reply({content:`You can now access Heavensward spoilers!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
@@ -35,7 +35,7 @@ module.exports = {
                 });
                 break;
             case 'sb':
-                await interaction.member.spoilers.add('916205539921379389')
+                await interaction.member.roles.add('916205539921379389')
                 .then(await interaction.reply({content:`You can now access Stormblood spoilers!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
@@ -43,7 +43,7 @@ module.exports = {
                 });
                 break;
             case 'shb':
-                await interaction.member.spoilers.add('916205603062444053')
+                await interaction.member.roles.add('916205603062444053')
                 .then(await interaction.reply({content:`You can now access Shadowbringers spoilers!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
@@ -51,7 +51,7 @@ module.exports = {
                 });
                 break;
             case 'ew':
-                await interaction.member.spoilers.add('916208243938824273')
+                await interaction.member.roles.add('916208243938824273')
                 .then(await interaction.reply({content:`You can now access End Walker spoilers!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
@@ -59,7 +59,7 @@ module.exports = {
                 });
                 break;
             case 'live':
-                await interaction.member.spoilers.add('916206796778139668')
+                await interaction.member.roles.add('916206796778139668')
                 .then(await interaction.reply({content:`You can now access Live Letters spoilers!`, ephemeral: true}))
                 .catch(err => {
                     console.log(err);
