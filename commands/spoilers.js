@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('spoiler')
+		.setName('spoilers')
 		.setDescription('Gives you access to the spoiler channel based on the selection of your choice!')
         .addStringOption(option => 
             option.setName('spoiler')
