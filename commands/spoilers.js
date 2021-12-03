@@ -5,7 +5,7 @@ module.exports = {
 		.setName('spoilers')
 		.setDescription('Gives you access to the spoiler channel based on the selection of your choice!')
         .addStringOption(option => 
-            option.setName('spoiler')
+            option.setName('spoilers')
             .setDescription("select an expansion")
             .setRequired(true)
             .addChoice('arr', 'arr')
@@ -16,8 +16,8 @@ module.exports = {
             .addChoice('live','live')
         ),
 	async execute(interaction) {
-        const spoiler = interaction.options.getString('spoiler');
-        switch (spoiler){
+        const spoilers = interaction.options.getString('spoilers');
+        switch (spoilers){
             case 'arr':
                 await interaction.member.spoilers.add('916204842987425852')
                 .then(await interaction.reply({content:`You can now access A Realm Reborn spoilers!`, ephemeral: true}))
